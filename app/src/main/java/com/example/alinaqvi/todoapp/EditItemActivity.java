@@ -1,13 +1,11 @@
 package com.example.alinaqvi.todoapp;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -26,8 +24,6 @@ public class EditItemActivity extends Activity {
                 EditText editText = (EditText) findViewById(R.id.mtEditItem);
                 data.putExtra("ITEM_NEW_TEXT", editText.getText().toString());
                 setResult(RESULT_OK, data);
-                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromInputMethod(editText.getWindowToken(), 0);
                 EditItemActivity.this.finish();
             }
         });
