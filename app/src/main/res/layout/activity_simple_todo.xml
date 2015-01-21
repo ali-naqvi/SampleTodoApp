@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/etNewItem"
         android:layout_alignParentBottom="true"
-        android:hint="Enter a new Item"
+        android:hint="@string/enter_new_item"
         android:layout_alignTop="@+id/btnAddItem"
         android:layout_toLeftOf="@+id/btnAddItem"
         android:layout_toStartOf="@+id/btnAddItem"
@@ -32,7 +32,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Item"
+        android:text="@string/add_item"
         android:id="@+id/btnAddItem"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"

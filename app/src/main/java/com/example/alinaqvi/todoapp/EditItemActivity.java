@@ -1,16 +1,15 @@
 package com.example.alinaqvi.todoapp;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-
-import java.util.ArrayList;
 
 
 public class EditItemActivity extends Activity {
@@ -19,13 +18,16 @@ public class EditItemActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_item);
-        Button button = (Button) findViewById(R.id.btSave);
+        Button button = (Button) findViewById(R.id.bntSave);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent data = getIntent();
-                data.putExtra("ITEM_NEW_TEXT", ((EditText) findViewById(R.id.mtSomeText)).getText().toString());
+                EditText editText = (EditText) findViewById(R.id.mtEditItem);
+                data.putExtra("ITEM_NEW_TEXT", editText.getText().toString());
                 setResult(RESULT_OK, data);
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromInputMethod(editText.getWindowToken(), 0);
                 EditItemActivity.this.finish();
             }
         });
@@ -37,7 +39,7 @@ public class EditItemActivity extends Activity {
         Bundle extras = getIntent().getExtras();
         int pos = extras.getInt("ITEM_POS");
         String text = extras.getString("ITEM_TEXT");
-        ((EditText) findViewById(R.id.mtSomeText)).setText(text);
+        ((EditText) findViewById(R.id.mtEditItem)).setText(text);
         setTitle(getTitle() + " - " + (pos + 1));
     }
 

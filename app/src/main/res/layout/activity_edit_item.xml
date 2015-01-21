@@ -11,16 +11,16 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/mtSomeText"
+        android:id="@+id/mtEditItem"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
-        android:id="@+id/btSave"
-        android:layout_below="@+id/mtSomeText"
-        android:layout_alignRight="@+id/mtSomeText"
-        android:layout_alignEnd="@+id/mtSomeText" />
+        android:text="@string/save"
+        android:id="@+id/bntSave"
+        android:layout_below="@+id/mtEditItem"
+        android:layout_alignRight="@+id/mtEditItem"
+        android:layout_alignEnd="@+id/mtEditItem" />
 </RelativeLayout>
